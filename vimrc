@@ -3,21 +3,21 @@ filetype off
 
 " bundles
 
-set rtp+=$MYVIMDIR/bundle/vundle/
+set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle "gmarik/vundle"
 
-Bundle "mileszs/ack"
+Bundle "mileszs/ack.vim"
 let g:ackprg = 'ag --nogroup --nocolor --column'
-Bundle "kien/ctrlp"
-Bundle "vim-scripts/openssl"
+Bundle "kien/ctrlp.vim"
+Bundle "openssl.vim"
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-repeat"
 Bundle "vim-ruby/vim-ruby"
-Bundle "tpope/sensible"
-Bundle "tpope/sleuth"
-Bundle "tpope/surround"
+Bundle "tpope/vim-sensible"
+Bundle "tpope/vim-sleuth"
+Bundle "tpope/vim-surround"
 
 filetype plugin indent on
 

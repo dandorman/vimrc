@@ -8,20 +8,27 @@ call vundle#rc()
 
 Bundle "gmarik/vundle"
 
+Bundle "openssl.vim"
+
+Bundle "guns/vim-clojure-static"
+Bundle "kien/ctrlp.vim"
 Bundle "mileszs/ack.vim"
 let g:ackprg = 'ag --nogroup --nocolor --column'
-Bundle "kien/ctrlp.vim"
-Bundle "openssl.vim"
+Bundle "noahfrederick/vim-hemisu"
+Bundle "tpope/vim-fireplace"
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-repeat"
-Bundle "vim-ruby/vim-ruby"
 Bundle "tpope/vim-sensible"
 Bundle "tpope/vim-sleuth"
 Bundle "tpope/vim-surround"
+Bundle "vim-ruby/vim-ruby"
 
 filetype plugin indent on
 
 " settings
+
+colorscheme hemisu
+set background=dark
 
 set backupdir=$HOME/.vimbackup,.
 set cursorline

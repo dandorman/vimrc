@@ -63,6 +63,7 @@ nnoremap <Leader>sv :source $MYVIMRC<CR>
 " abbreviations
 
 iabbrev dbg require "ruby-debug"; Debugger.start; debugger; 1
+iabbrev bbg require "byebug"; byebug
 
 " seeing is believing
 

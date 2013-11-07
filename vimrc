@@ -12,9 +12,8 @@ Bundle "openssl.vim"
 
 Bundle "guns/vim-clojure-static"
 Bundle "kien/ctrlp.vim"
-Bundle "mileszs/ack.vim"
-let g:ackprg = 'ag --nogroup --nocolor --column'
 Bundle "noahfrederick/vim-hemisu"
+Bundle "rking/ag.vim"
 Bundle "tpope/vim-commentary"
 Bundle "tpope/vim-fireplace"
 Bundle "tpope/vim-fugitive"

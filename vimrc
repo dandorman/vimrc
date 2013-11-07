@@ -12,6 +12,7 @@ Bundle "openssl.vim"
 
 Bundle "guns/vim-clojure-static"
 Bundle "kien/ctrlp.vim"
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 Bundle "noahfrederick/vim-hemisu"
 Bundle "rking/ag.vim"
 Bundle "tpope/vim-commentary"
@@ -55,8 +56,6 @@ cnoremap w!! %!sudo tee > /dev/null %
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 
 nnoremap <Leader><Leader> <C-^>
-
-nnoremap <Leader>p :CtrlP<CR>
 
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>

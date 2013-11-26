@@ -11,6 +11,7 @@ Bundle "gmarik/vundle"
 Bundle "openssl.vim"
 
 Bundle "guns/vim-clojure-static"
+Bundle "kchmck/vim-coffee-script"
 Bundle "kien/ctrlp.vim"
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 Bundle "noahfrederick/vim-hemisu"

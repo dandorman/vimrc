@@ -16,7 +16,6 @@ Bundle "kien/ctrlp.vim"
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 Bundle "mustache/vim-mode"
 Bundle "noahfrederick/vim-hemisu"
-Bundle "rking/ag.vim"
 Bundle "slim-template/vim-slim"
 Bundle "tpope/vim-commentary"
 Bundle "tpope/vim-fireplace"

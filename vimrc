@@ -13,7 +13,6 @@ Bundle "openssl.vim"
 Bundle "guns/vim-clojure-static"
 Bundle "kchmck/vim-coffee-script"
 Bundle "kien/ctrlp.vim"
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 Bundle "mustache/vim-mode"
 Bundle "noahfrederick/vim-hemisu"
 Bundle "slim-template/vim-slim"
@@ -44,6 +43,16 @@ set visualbell
 set wildmode=list:longest
 set wildignore=.git,public/images,tmp,vendor,*.gif,*.jpeg,*.jpg,*.png
 
+" search
+
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+endif
+
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+
 " autocommands
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -53,13 +62,21 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 let mapleader = " "
 let maplocalleader = " "
 
+" save file with sudo
 cnoremap w!! %!sudo tee > /dev/null %
+" current file's directory
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 
 nnoremap <Leader><Leader> <C-^>
 
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
+
+" grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" search
+nnoremap \ :Ag<SPACE>
 
 " abbreviations
 

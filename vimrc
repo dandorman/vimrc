@@ -51,7 +51,7 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 
 " autocommands
 
@@ -76,35 +76,9 @@ nnoremap <Leader>sv :source $MYVIMRC<CR>
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " search
-nnoremap \ :Ag<SPACE>
+nnoremap <Leader>g :Ag<SPACE>
 
 " abbreviations
 
 iabbrev dbg require "ruby-debug"; Debugger.start; debugger; 1
 iabbrev bbg require "byebug"; byebug
-
-" seeing is believing
-
-function! SeeingIsBelievingGeneral()
-  let cursor_pos = getpos(".")
-  execute ":%!seeing_is_believing"
-  call setpos(".", cursor_pos)
-endfunction
-
-function! SeeingIsBelievingSpecific()
-  let cursor_pos = getpos(".")
-  execute ":%!seeing_is_believing -x"
-  call setpos(".", cursor_pos)
-endfunction
-
-function! SeeingIsBelievingClear()
-  let cursor_pos = getpos(".")
-  execute ":%s/\\s\\+# [=~]>.*$//e"
-  silent execute ":g/^# [=~>]>/d"
-  silent execute ":v/\\_s*\\S/d"
-  call setpos(".", cursor_pos)
-endfunction
-
-nnoremap <Leader>ss :call SeeingIsBelievingGeneral()<CR>
-nnoremap <Leader>sx :call SeeingIsBelievingSpecific()<CR>
-nnoremap <Leader>sc :call SeeingIsBelievingClear()<CR>

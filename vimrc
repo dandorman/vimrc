@@ -27,6 +27,7 @@ Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-sensible"
 Bundle "tpope/vim-sleuth"
 Bundle "tpope/vim-surround"
+Bundle "tpope/vim-vinegar"
 Bundle "vim-ruby/vim-ruby"
 
 filetype plugin indent on

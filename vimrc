@@ -33,9 +33,6 @@ filetype plugin indent on
 
 " settings
 
-colorscheme hemisu
-set background=dark
-
 set backupdir=$HOME/.vimbackup,.
 set cursorline
 set directory=$HOME/.vimswap,.
@@ -85,3 +82,10 @@ nnoremap <Leader>g :Ag<SPACE>
 
 iabbrev dbg require "ruby-debug"; Debugger.start; debugger; 1
 iabbrev bbg require "byebug"; byebug
+
+" local overrides
+
+let s:local_config = $HOME . "/.vimrc.local"
+if filereadable(s:local_config)
+  execute "source " . s:local_config
+endif

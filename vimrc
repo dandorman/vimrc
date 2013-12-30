@@ -39,6 +39,7 @@ set directory=$HOME/.vimswap,.
 set formatoptions=croqwanl
 set gdefault
 set hidden
+set list listchars=tab:»·,trail:·
 set visualbell
 set wildmode=list:longest
 set wildignore=.git,public/images,tmp,vendor,*.gif,*.jpeg,*.jpg,*.png
@@ -55,7 +56,16 @@ command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 
 " autocommands
 
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+function! TrimWhiteSpace()
+  let l:cursor = getpos(".")
+  %s/\s\+$//e
+  call setpos('.', l:cursor)
+endfunction
+
+autocmd BufWritePre * :call TrimWhiteSpace()
+autocmd FileWritePre * :call TrimWhiteSpace()
 
 " mappings
 

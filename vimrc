@@ -1,35 +1,35 @@
+" bundles
+
+"=bundle gmarik/vundle
+"=bundle guns/vim-clojure-static
+"=bundle kchmck/vim-coffee-script
+"=bundle kien/ctrlp.vim
+"=bundle mustache/vim-mode
+"=bundle noahfrederick/vim-hemisu
+"=bundle othree/html5.vim
+"=bundle slim-template/vim-slim
+"=bundle tommcdo/vim-exchange
+"=bundle tpope/vim-commentary
+"=bundle tpope/vim-eunuch
+"=bundle tpope/vim-fireplace
+"=bundle tpope/vim-fugitive
+"=bundle tpope/vim-pathogen
+"=bundle tpope/vim-rails
+"=bundle tpope/vim-repeat
+"=bundle tpope/vim-sensible
+"=bundle tpope/vim-sleuth
+"=bundle tpope/vim-surround
+"=bundle tpope/vim-vinegar
+"=bundle vim-ruby/vim-ruby
+
 set nocompatible
 filetype off
 
 " bundles
 
-set rtp+=$HOME/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle "gmarik/vundle"
-
-Bundle "openssl.vim"
-
-Bundle "guns/vim-clojure-static"
-Bundle "kchmck/vim-coffee-script"
-Bundle "kien/ctrlp.vim"
-Bundle "mustache/vim-mode"
-Bundle "noahfrederick/vim-hemisu"
-Bundle "othree/html5.vim"
-Bundle "slim-template/vim-slim"
-Bundle "tommcdo/vim-exchange"
-Bundle "tpope/vim-commentary"
-Bundle "tpope/vim-eunuch"
-Bundle "tpope/vim-fireplace"
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-rails"
-Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-sensible"
-Bundle "tpope/vim-sleuth"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-vinegar"
-Bundle "vim-ruby/vim-ruby"
-
+source $HOME/.vim/bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#incubate()
+syntax on
 filetype plugin indent on
 
 " settings
@@ -93,6 +93,7 @@ nnoremap <Leader>g :Ag<SPACE>
 
 iabbrev dbg require "ruby-debug"; Debugger.start; debugger; 1
 iabbrev bbg require "byebug"; byebug
+iabbrev doctype DOCTYPE
 
 " local overrides
 
